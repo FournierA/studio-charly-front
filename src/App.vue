@@ -1,5 +1,6 @@
 <template>
   <div id="content">
+    <CharlyHeader />
     <CharlyIntroduction />
     <ServiceHighlight
       title="Portrait"
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+import CharlyHeader from "./components/CharlyHeader.vue";
 import CharlyIntroduction from "./components/CharlyIntroduction.vue";
 import ServiceHighlight from "./components/ServiceHighlight.vue";
 
@@ -17,6 +19,7 @@ export default {
   components: {
     CharlyIntroduction,
     ServiceHighlight,
+    CharlyHeader,
   },
 };
 </script>
