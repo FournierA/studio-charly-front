@@ -1,5 +1,17 @@
 <template>
-  <div class="charly-header"></div>
+  <header class="charly-header">  
+    <nav>    
+      <a href="#"><i class="fa-solid fa-location-dot fa-lg"></i> 26 rue Paul Machy, Bourbourg</a>
+      <ul style="float:right">
+        <li id="services"><a href="">Contactez-moi</a> </li>
+        <li id="contact" style="padding-right: 10px;"><a href="">Mes tarifs</a> </li>
+      </ul>
+    </nav>
+    <ul>
+      <li class="charly-header__left"><p style="float:right">Photographe professionnel</p></li>
+      <li><img id="logo" src="../assets/logo.jpg" alt="logo"></li>
+    </ul>
+  </header>
 </template>
 
 <script>
@@ -11,4 +23,55 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
+.charly-header {
+  margin: 5% 18%;
+  
+  a {
+    text-decoration: none;
+    color:black;
+  }
+
+  nav {
+    border-bottom: 2px solid rgb(189, 189, 189);
+    padding-bottom:10px;
+  }
+
+  nav>a {
+    margin-left:-3%;
+  }
+
+  ul {
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    padding-left:50px;
+  }
+
+  &__left {
+    width:32%;
+    margin-top: -12px;
+    color:rgb(164,164,164);
+  }
+
+  #logo {
+    width: 150px;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    background: rgb(249, 249, 249);
+    border: 32px solid rgb(249, 249, 249);
+    border-radius: 48px;
+  }
+  i.fa-solid {
+    width:25px;
+  }
+}
 </style>

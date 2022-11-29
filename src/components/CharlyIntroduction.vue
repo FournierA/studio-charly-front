@@ -95,8 +95,8 @@ export default {
     left: 50%;
     margin: 0;
     transform: translate(-50%, -50%);
-    background: white;
-    border: 32px solid white;
+    background: rgb(249, 249, 249);
+    border: 32px solid rgb(249, 249, 249);
     border-radius: 48px;
   }
 
@@ -115,7 +115,7 @@ export default {
     border-radius: 48px;
     padding: 12px 48px;
     margin: auto;
-    border: 32px solid white;
+    border: 32px solid rgb(249, 249, 249);
 
     &::after {
       content: "";
