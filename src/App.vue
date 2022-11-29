@@ -6,6 +6,7 @@
       title="Portrait"
       description="Ce que j’aime dans la photo c’est de pouvoir <strong>capturer</strong> et <strong>transmettre les émotions</strong> en image. Ce qui fait du portrait ma passion, c’est l’infinité créative qu’il permet. Que ce soit en studio ou en extérieur, il permet de jouer avec les lumières, les décors, les accessoires pour <strong>obtenir l’image désirée</strong>. En couple, en famille ou même entre amis c’est un excellent moyen de conserver de beaux souvenirs."
     />
+    <CharlyFooter />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 import CharlyHeader from "./components/CharlyHeader.vue";
 import CharlyIntroduction from "./components/CharlyIntroduction.vue";
 import ServiceHighlight from "./components/ServiceHighlight.vue";
+import CharlyFooter from "./components/CharlyFooter.vue";
 
 export default {
   name: "App",
@@ -20,6 +22,7 @@ export default {
     CharlyIntroduction,
     ServiceHighlight,
     CharlyHeader,
+    CharlyFooter
   },
 };
 </script>
@@ -51,12 +54,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "The Goldsmit Vintage", sans-serif;
+  font-family: "The Goldsmith Vintage", sans-serif;
 }
 
-p, header {
+p, header, footer {
   font: normal 16px/30px "Roboto", sans-serif;
 }
+
+a {
+    text-decoration: none;
+    color:black;
+  }
 
 .container {
   width: 980px;

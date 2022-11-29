@@ -26,11 +26,7 @@ export default {
 
 .charly-header {
   margin: 5% 18%;
-  
-  a {
-    text-decoration: none;
-    color:black;
-  }
+  font-weight: 500;
 
   nav {
     border-bottom: 2px solid rgb(189, 189, 189);
@@ -54,9 +50,13 @@ export default {
   }
 
   &__left {
-    width:32%;
+    width:50%;
     margin-top: -12px;
-    color:rgb(164,164,164);
+    color:rgb(152, 152, 152);
+  }
+
+  &__left p {
+    margin-right:165px;
   }
 
   #logo {
@@ -66,10 +66,10 @@ export default {
     left: 50%;
     margin: 0;
     transform: translate(-50%, -50%);
-    background: rgb(249, 249, 249);
     border: 32px solid rgb(249, 249, 249);
     border-radius: 48px;
   }
+  
   i.fa-solid {
     width:25px;
   }
