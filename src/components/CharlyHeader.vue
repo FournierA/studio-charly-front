@@ -1,77 +1,106 @@
 <template>
-  <header class="charly-header">  
-    <nav>    
-      <a href="#"><i class="fa-solid fa-location-dot fa-lg"></i> 26 rue Paul Machy, Bourbourg</a>
-      <ul style="float:right">
-        <li id="services"><a href="">Contactez-moi</a> </li>
-        <li id="contact" style="padding-right: 10px;"><a href="">Mes tarifs</a> </li>
+  <header class="charly-header inner-container">
+    <!-- LOCATION -->
+    <a
+      class="charly-header__location"
+      href="https://goo.gl/maps/LtAaLrWJzK26djqPA"
+      target="blank"
+    >
+      26 rue Paul Machy, Bourbourg</a
+    >
+
+    <span class="charly-header__job-title">Photographe professionnel</span>
+
+    <!-- LOGO -->
+    <div class="charly-header__logo">
+      <img :src="CharlyLogo" alt="Logo du Studio Charly" />
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="charly-header__navigation">
+      <ul>
+        <li><a href="#contacts">Contactez-moi</a></li>
+        <!-- <li><a href="#">Mes tarifs</a></li> -->
       </ul>
     </nav>
-    <ul>
-      <li class="charly-header__left"><p style="float:right">Photographe professionnel</p></li>
-      <li><img id="logo" src="../assets/logo.jpg" alt="logo"></li>
-    </ul>
   </header>
 </template>
 
 <script>
+import CharlyLogo from "@/assets/logo.png";
+
 export default {
   name: "CharlyHeader",
   components: {},
+  setup() {
+    return {
+      CharlyLogo,
+    };
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 .charly-header {
-  margin: 5% 18%;
-  font-weight: 500;
+  font: normal 14px/30px "Roboto", sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 48px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid grey;
 
-  nav {
-    border-bottom: 2px solid rgb(189, 189, 189);
-    padding-bottom:10px;
+  &__location {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: -25px;
+      // CSS from Font Awesome documentation
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f3c5";
+    }
   }
 
-  nav>a {
-    margin-left:-3%;
-  }
-
-  ul {
-    overflow: hidden;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    padding-left:50px;
-  }
-
-  &__left {
-    width:50%;
-    margin-top: -12px;
-    color:rgb(152, 152, 152);
-  }
-
-  &__left p {
-    margin-right:165px;
-  }
-
-  #logo {
-    width: 150px;
+  &__job-title {
     position: absolute;
-    top: 100px;
+    bottom: -35px;
     left: 50%;
-    margin: 0;
-    transform: translate(-50%, -50%);
-    border: 32px solid rgb(249, 249, 249);
-    border-radius: 48px;
+    transform: translateX(calc(-150% - 20px));
   }
-  
-  i.fa-solid {
-    width:25px;
+
+  &__logo {
+    box-sizing: content-box;
+    width: 130px;
+    background: #f9f9f9f2;
+    padding: 0 30px;
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+  }
+
+  &__job-title {
+    color: #707070;
+  }
+
+  &__navigation {
+    ul {
+      list-style-type: none;
+      display: flex;
+
+      li {
+        width: 120px;
+        text-align: center;
+      }
+    }
   }
 }
 </style>

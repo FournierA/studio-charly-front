@@ -1,7 +1,7 @@
 <template>
-  <div class="charly-introduction container">
+  <div class="charly-introduction inner-container">
     <div class="charly-introduction__left">
-      <h2 class="charly-introduction__title">Qui suis-je ?</h2>
+      <h2 class="charly-introduction__title">Qui je suis ?</h2>
       <p class="charly-introduction__paragraph">
         Je m’appelle Charly, c’est pendant mon enfance qu’est née
         <strong>ma passion pour la photo</strong>, en photographiant les
@@ -36,13 +36,13 @@
 
     <figure class="charly-introduction__right">
       <img src="../assets/charly.png" />
-      <!-- <figcaption>
+      <figcaption>
         <h3>
           "Photographier, c'est une attitude, une façon d'être, une manière de
           vivre"
         </h3>
         Henri Cartier Bresson
-      </figcaption> -->
+      </figcaption>
     </figure>
   </div>
 </template>
@@ -72,32 +72,84 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .charly-introduction {
-  display: flex;
-  margin: 128px auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 192px auto;
 
   &__left {
     position: relative;
     text-align: center;
-    width: 50%;
-    padding: 32px 0;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    padding: 76px 0;
+    min-height: 480px;
   }
 
   &__right {
-    width: 50%;
     margin: 0 auto 0 32px;
+    position: relative;
+
+    img {
+      height: 480px;
+      box-shadow: 2px 2px 5px #00000045;
+      border-radius: 6px;
+    }
+
+    figcaption {
+      position: absolute;
+      top: -90px;
+      left: 175px;
+      width: 400px;
+      color: #707070;
+      font: 300 20px/26px "Roboto", sans-serif;
+      text-align: center;
+
+      h3 {
+        font: italic 500 20px/26px "Roboto", sans-serif;
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 3px;
+          width: 220px;
+          background-color: #ce5334;
+          left: 146px;
+        }
+      }
+    }
   }
 
   &__title {
     position: absolute;
     top: 0;
     left: 50%;
-    margin: 0;
     transform: translate(-50%, -50%);
-    background: rgb(249, 249, 249);
-    border: 32px solid rgb(249, 249, 249);
+    margin: 0;
+    text-align: center;
+    background: #f9f9f9;
     border-radius: 48px;
+    font-size: 30px;
+    line-height: 60px;
+    letter-spacing: 0.9px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: grey;
+      height: 1px;
+      top: 50%;
+      left: -106%;
+      width: 170px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: grey;
+      height: 1px;
+      top: 50%;
+      right: -106%;
+      width: 170px;
+    }
   }
 
   &__paragraph {
@@ -105,6 +157,7 @@ export default {
   }
 
   &__read-more-button {
+    cursor: pointer;
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -112,19 +165,33 @@ export default {
     color: white;
     display: block;
     background: #bf5b3e;
-    border-radius: 48px;
+    border-radius: 28px;
+    border-color: transparent;
     padding: 12px 48px;
-    margin: auto;
-    border: 32px solid rgb(249, 249, 249);
+    box-shadow: 3px 3px 2px #00000045;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: grey;
+      height: 1px;
+      top: 50%;
+      left: -112%;
+      width: 170px;
+    }
 
     &::after {
       content: "";
-      display: block;
       position: absolute;
-      background: blue;
-      width: 100%;
-      top: 0;
-      left: 0;
+      background: grey;
+      height: 1px;
+      top: 50%;
+      right: -112%;
+      width: 170px;
+    }
+
+    &:hover {
+      background-color: #9a4932;
     }
   }
 }
