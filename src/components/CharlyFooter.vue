@@ -67,6 +67,12 @@
             >studio.charly.bourgourg@gmail.com</a
           >
         </li>
+        <li>
+          <a href="tel:06-82-53-68-07"
+            ><i class="charly-icon fa-solid fa-phone fa-xl"></i
+            >06-82-53-68-07</a
+          >
+        </li>
       </ul>
     </div>
   </footer>
